@@ -10,7 +10,7 @@ The architecture combines traditional rule-based detection with machine learning
 
 ## Architecture Diagram
 
-![System Architecture](architecture.png)
+![System Architecture](Architecture.jpeg)
 
 ---
 
