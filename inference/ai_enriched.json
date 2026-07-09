@@ -1,0 +1,100 @@
+{"source": "ai_fusion", "message": "ddos attack network flood detected", "attack_type": "DDoS Attack", "ai_alert": "HIGH", "risk_score": 90, "source_layer": "network", "timestamp": "2026-05-18 12:32:48"}
+{"source":"ai_fusion","message":"ssh authentication failed for invalid user admin","attack_type":"SSH Authentication Failure","ai_alert":"MEDIUM","risk_score":65,"source_layer":"host","timestamp":"2026-05-18 12:00:01"}
+
+{"source":"ai_fusion","message":"multiple failed password attempts detected","attack_type":"Brute Force Attempt","ai_alert":"HIGH","risk_score":88,"source_layer":"host","timestamp":"2026-05-18 12:00:05"}
+
+{"source":"ai_fusion","message":"unauthorized access attempt detected on server","attack_type":"Unauthorized Access","ai_alert":"HIGH","risk_score":90,"source_layer":"host","timestamp":"2026-05-18 12:00:10"}
+
+{"source":"ai_fusion","message":"ddos attack network flood detected","attack_type":"DDoS Attack","ai_alert":"HIGH","risk_score":95,"source_layer":"network","timestamp":"2026-05-18 12:00:15"}
+
+{"source":"ai_fusion","message":"network traffic spike detected","attack_type":"Traffic Anomaly","ai_alert":"MEDIUM","risk_score":70,"source_layer":"network","timestamp":"2026-05-18 12:00:20"}
+
+{"source":"ai_fusion","message":"permission denied while accessing secure file","attack_type":"Permission Violation","ai_alert":"LOW","risk_score":30,"source_layer":"host","timestamp":"2026-05-18 12:00:25"}
+
+{"source":"ai_fusion","message":"suspicious login activity from unknown ip","attack_type":"Suspicious Login Activity","ai_alert":"MEDIUM","risk_score":60,"source_layer":"host","timestamp":"2026-05-18 12:00:30"}
+
+{"source":"ai_fusion","message":"authentication failed for root account","attack_type":"SSH Authentication Failure","ai_alert":"HIGH","risk_score":85,"source_layer":"host","timestamp":"2026-05-18 12:00:35"}
+
+{"source":"ai_fusion","message":"possible host compromise indicator detected","attack_type":"Host Compromise Indicator","ai_alert":"HIGH","risk_score":92,"source_layer":"host","timestamp":"2026-05-18 12:00:40"}
+
+{"source":"ai_fusion","message":"icmp flood attack detected","attack_type":"ICMP Flood Attack","ai_alert":"HIGH","risk_score":91,"source_layer":"network","timestamp":"2026-05-18 12:00:45"}
+
+{"source":"ai_fusion","message":"user attempted invalid sudo command","attack_type":"Unauthorized Privilege Escalation","ai_alert":"MEDIUM","risk_score":68,"source_layer":"host","timestamp":"2026-05-18 12:00:50"}
+
+{"source":"ai_fusion","message":"connection flood detected from remote host","attack_type":"DDoS Attack","ai_alert":"HIGH","risk_score":94,"source_layer":"network","timestamp":"2026-05-18 12:00:55"}
+
+{"source":"ai_fusion","message":"ssh brute force pattern identified","attack_type":"Brute Force Attempt","ai_alert":"HIGH","risk_score":89,"source_layer":"host","timestamp":"2026-05-18 12:01:00"}
+
+{"source":"ai_fusion","message":"failed password for invalid user guest","attack_type":"Invalid User Login Attempt","ai_alert":"MEDIUM","risk_score":64,"source_layer":"host","timestamp":"2026-05-18 12:01:05"}
+
+{"source":"ai_fusion","message":"abnormal outbound traffic volume detected","attack_type":"Network Anomaly","ai_alert":"MEDIUM","risk_score":72,"source_layer":"network","timestamp":"2026-05-18 12:01:10"}
+
+{"source":"ai_fusion","message":"malicious traffic signature detected","attack_type":"Malicious Network Activity","ai_alert":"HIGH","risk_score":93,"source_layer":"network","timestamp":"2026-05-18 12:01:15"}
+
+{"source":"ai_fusion","message":"user authentication warning generated","attack_type":"Authentication Warning","ai_alert":"LOW","risk_score":35,"source_layer":"host","timestamp":"2026-05-18 12:01:20"}
+
+{"source":"ai_fusion","message":"denied access to restricted configuration file","attack_type":"Permission Violation","ai_alert":"MEDIUM","risk_score":58,"source_layer":"host","timestamp":"2026-05-18 12:01:25"}
+
+{"source":"ai_fusion","message":"rapid port scanning behavior detected","attack_type":"Port Scan Attack","ai_alert":"HIGH","risk_score":90,"source_layer":"network","timestamp":"2026-05-18 12:01:30"}
+
+{"source":"ai_fusion","message":"suspicious shell execution attempt detected","attack_type":"Suspicious Command Execution","ai_alert":"HIGH","risk_score":86,"source_layer":"host","timestamp":"2026-05-18 12:01:35"}
+
+{"source":"ai_fusion","message":"network flood condition triggered","attack_type":"DDoS Attack","ai_alert":"HIGH","risk_score":96,"source_layer":"network","timestamp":"2026-05-18 12:01:40"}
+
+{"source":"ai_fusion","message":"multiple unauthorized login attempts detected","attack_type":"Unauthorized Access","ai_alert":"HIGH","risk_score":87,"source_layer":"host","timestamp":"2026-05-18 12:01:45"}
+
+{"source":"ai_fusion","message":"possible malware communication identified","attack_type":"Malware Communication","ai_alert":"HIGH","risk_score":94,"source_layer":"network","timestamp":"2026-05-18 12:01:50"}
+
+{"source":"ai_fusion","message":"ssh session anomaly detected","attack_type":"SSH Suspicious Activity","ai_alert":"MEDIUM","risk_score":67,"source_layer":"host","timestamp":"2026-05-18 12:01:55"}
+
+{"source":"ai_fusion","message":"authentication token validation failed","attack_type":"Authentication Failure","ai_alert":"MEDIUM","risk_score":61,"source_layer":"host","timestamp":"2026-05-18 12:02:00"}
+
+{"source":"ai_fusion","message":"tcp syn flood attack detected","attack_type":"SYN Flood Attack","ai_alert":"HIGH","risk_score":97,"source_layer":"network","timestamp":"2026-05-18 12:02:05"}
+
+{"source":"ai_fusion","message":"suspicious api request pattern observed","attack_type":"API Abuse Detection","ai_alert":"MEDIUM","risk_score":69,"source_layer":"cloud","timestamp":"2026-05-18 12:02:10"}
+
+{"source":"ai_fusion","message":"unauthorized file modification attempt","attack_type":"File Integrity Threat","ai_alert":"HIGH","risk_score":84,"source_layer":"host","timestamp":"2026-05-18 12:02:15"}
+
+{"source":"ai_fusion","message":"high latency traffic anomaly detected","attack_type":"Traffic Anomaly","ai_alert":"LOW","risk_score":40,"source_layer":"network","timestamp":"2026-05-18 12:02:20"}
+
+{"source":"ai_fusion","message":"repeated login failures from remote client","attack_type":"Brute Force Attempt","ai_alert":"HIGH","risk_score":82,"source_layer":"host","timestamp":"2026-05-18 12:02:25"}
+
+{"source":"ai_fusion","message":"network denial of service behavior observed","attack_type":"DDoS Attack","ai_alert":"HIGH","risk_score":95,"source_layer":"network","timestamp":"2026-05-18 12:02:30"}
+
+{"source":"ai_fusion","message":"abnormal cloud authentication request detected","attack_type":"Cloud Authentication Threat","ai_alert":"MEDIUM","risk_score":66,"source_layer":"cloud","timestamp":"2026-05-18 12:02:35"}
+
+{"source":"ai_fusion","message":"privileged command misuse detected","attack_type":"Privilege Abuse","ai_alert":"HIGH","risk_score":88,"source_layer":"host","timestamp":"2026-05-18 12:02:40"}
+
+{"source":"ai_fusion","message":"firewall denied suspicious inbound traffic","attack_type":"Suspicious Network Access","ai_alert":"MEDIUM","risk_score":63,"source_layer":"network","timestamp":"2026-05-18 12:02:45"}
+
+{"source":"ai_fusion","message":"possible credential stuffing attempt identified","attack_type":"Credential Stuffing","ai_alert":"HIGH","risk_score":91,"source_layer":"host","timestamp":"2026-05-18 12:02:50"}
+
+{"source":"ai_fusion","message":"cloud service abuse pattern detected","attack_type":"Cloud Abuse Activity","ai_alert":"HIGH","risk_score":85,"source_layer":"cloud","timestamp":"2026-05-18 12:02:55"}
+
+{"source":"ai_fusion","message":"invalid ssh authentication token","attack_type":"SSH Authentication Failure","ai_alert":"MEDIUM","risk_score":62,"source_layer":"host","timestamp":"2026-05-18 12:03:00"}
+
+{"source":"ai_fusion","message":"distributed traffic flood identified","attack_type":"Distributed Flood Attack","ai_alert":"HIGH","risk_score":98,"source_layer":"network","timestamp":"2026-05-18 12:03:05"}
+
+{"source":"ai_fusion","message":"unauthorized admin panel access detected","attack_type":"Unauthorized Access","ai_alert":"HIGH","risk_score":89,"source_layer":"host","timestamp":"2026-05-18 12:03:10"}
+
+{"source":"ai_fusion","message":"suspicious cloud login from unusual region","attack_type":"Cloud Suspicious Login","ai_alert":"MEDIUM","risk_score":71,"source_layer":"cloud","timestamp":"2026-05-18 12:03:15"}
+
+{"source":"ai_fusion","message":"possible remote code execution attempt detected","attack_type":"Remote Code Execution Attempt","ai_alert":"HIGH","risk_score":99,"source_layer":"host","timestamp":"2026-05-18 12:03:20"}
+
+{"source":"ai_fusion","message":"network bandwidth exhaustion attempt observed","attack_type":"Bandwidth Exhaustion Attack","ai_alert":"HIGH","risk_score":96,"source_layer":"network","timestamp":"2026-05-18 12:03:25"}
+
+{"source":"ai_fusion","message":"failed authentication request for cloud api","attack_type":"Cloud Authentication Threat","ai_alert":"MEDIUM","risk_score":65,"source_layer":"cloud","timestamp":"2026-05-18 12:03:30"}
+
+{"source":"ai_fusion","message":"unauthorized privilege escalation attempt","attack_type":"Privilege Escalation","ai_alert":"HIGH","risk_score":92,"source_layer":"host","timestamp":"2026-05-18 12:03:35"}
+
+{"source":"ai_fusion","message":"malicious outbound connection detected","attack_type":"Malicious Communication","ai_alert":"HIGH","risk_score":93,"source_layer":"network","timestamp":"2026-05-18 12:03:40"}
+
+{"source":"ai_fusion","message":"suspicious authentication anomaly detected","attack_type":"Authentication Anomaly","ai_alert":"LOW","risk_score":45,"source_layer":"host","timestamp":"2026-05-18 12:03:45"}
+
+{"source":"ai_fusion","message":"high volume traffic flood observed","attack_type":"Traffic Flood Attack","ai_alert":"HIGH","risk_score":97,"source_layer":"network","timestamp":"2026-05-18 12:03:50"}
+
+{"source":"ai_fusion","message":"repeated denied access attempts detected","attack_type":"Permission Violation","ai_alert":"MEDIUM","risk_score":59,"source_layer":"host","timestamp":"2026-05-18 12:03:55"}
+
+{"source":"ai_fusion","message":"cloud api abuse behavior identified","attack_type":"API Abuse Detection","ai_alert":"HIGH","risk_score":86,"source_layer":"cloud","timestamp":"2026-05-18 12:04:00"}
+
+{"source":"ai_fusion","message":"suspicious network reconnaissance activity","attack_type":"Reconnaissance Activity","ai_alert":"MEDIUM","risk_score":73,"source_layer":"network","timestamp":"2026-05-18 12:04:05"}
