@@ -1,141 +1,164 @@
-
-# Agent Configuration
+# Installation Guide
 
 ## Overview
 
-This document describes the deployment and configuration of the Wazuh Agents used in the proposed **Enhancing Wazuh SIEM with Cross-Layer Security and AI-Based Anomaly Detection** system.
+This document provides the complete installation guide for the **Enhancing Wazuh SIEM with Cross-Layer Security and AI-Based Anomaly Detection** project. The implementation consists of a centralized Wazuh SIEM platform deployed on an Ubuntu virtual machine, while the Host, Network, and Cloud environments are monitored using Wazuh Agents installed on separate virtual machines and devices.
 
-To achieve centralized security monitoring, Wazuh Agents were deployed across three different security layers: **Host**, **Network**, and **Cloud**. Each agent continuously collects security events and system logs from its respective environment and securely forwards them to the centralized Wazuh Manager.
-
-Unlike a traditional deployment where all components reside on a single machine, this project distributes the monitored environments across multiple virtual machines and physical devices. This architecture better simulates a real-world enterprise network, where different systems operate independently while reporting security events to a centralized SIEM platform.
+The installation process includes preparing the virtual environment, installing the required software, setting up Python for the AI Engine, and installing Wazuh Agents on the monitored endpoints. Once the environment is prepared, the Wazuh platform can be deployed, and security monitoring can begin.
 
 ---
 
 # Deployment Environment
 
-The complete implementation consists of multiple virtual machines and physical devices connected through the network.
+The project was implemented using the following environment.
 
-| Component | Deployment Environment |
-|-----------|------------------------|
+| Component | Deployment |
+|-----------|------------|
 | Wazuh Server | Ubuntu 22.04 LTS (VMware Virtual Machine) |
 | Host Layer | Ubuntu/Kali Linux Virtual Machine |
-| Network Layer | Separate Virtual Machine |
+| Network Layer | Linux Virtual Machine |
 | Cloud Layer | OpenStack Virtual Machine |
 | AI Engine | Windows Host Machine |
 
-The Ubuntu virtual machine hosts the centralized Wazuh infrastructure, including the Wazuh Manager, Wazuh Indexer, and Wazuh Dashboard. The Host, Network, and Cloud environments are deployed independently and communicate with the Wazuh Manager through registered Wazuh Agents.
+---
+
+# Software Requirements
+
+The following software was used throughout the implementation of the project.
+
+- VMware Workstation
+- Ubuntu 22.04 LTS
+- Kali Linux
+- OpenStack
+- Python 3.x
+- Wazuh 4.14
+- Suricata IDS
+- Git
 
 ---
 
-# Installing the Wazuh Agent
+# Preparing the Operating System
 
-Each monitored system requires a Wazuh Agent to enable communication with the centralized Wazuh Server. The agent is responsible for collecting logs, monitoring endpoint activities, and securely forwarding security events to the Wazuh Manager.
-
-The agent was installed using the Ubuntu package manager.
+Before installing any software, update the operating system to ensure all packages are current.
 
 ```bash
 sudo apt update
+sudo apt upgrade -y
+```
+
+---
+
+# Installing Git
+
+Git is required to clone repositories and manage project files.
+
+```bash
+sudo apt install git -y
+```
+
+Verify the installation.
+
+```bash
+git --version
+```
+
+---
+
+# Installing Python
+
+Python is required for the AI Engine and machine learning models.
+
+Install Python using the following command.
+
+```bash
+sudo apt install python3 python3-pip -y
+```
+
+Verify the installation.
+
+```bash
+python3 --version
+pip3 --version
+```
+
+---
+
+# Installing Python Dependencies
+
+The AI Engine requires several Python libraries for preprocessing, machine learning, and data analysis.
+
+Install the required libraries using:
+
+```bash
+pip install pandas numpy scikit-learn matplotlib joblib notebook
+```
+
+These libraries are used for:
+
+- Data preprocessing
+- Feature engineering
+- Machine learning model execution
+- Log analysis
+- AI-based anomaly detection
+
+---
+
+# Installing Wazuh Agents
+
+To enable centralized security monitoring, a Wazuh Agent must be installed on every monitored endpoint, including the **Host**, **Network**, and **Cloud** virtual machines.
+
+First, update the package list.
+
+```bash
+sudo apt update
+```
+
+Install the Wazuh Agent.
+
+```bash
 sudo apt install wazuh-agent
 ```
 
-After installation, the Wazuh Agent configuration file was updated with the IP address of the Wazuh Manager running on the Ubuntu server. The agent was then registered with the Wazuh Server and the service was started.
+After the installation is complete, the Wazuh Agent package is available on the endpoint. The agent can then be configured to communicate with the centralized Wazuh Manager. Once configured and started, it begins collecting operating system events, authentication logs, network activities, and other security-related information before securely forwarding the collected logs to the Wazuh Server for analysis.
 
-Once successfully connected, the monitored endpoint became visible in the Wazuh Dashboard, confirming successful communication between the agent and the manager.
-
----
-
-# Host Layer Configuration
-
-The Host Layer was deployed using a Linux virtual machine to simulate a monitored endpoint. A Wazuh Agent was installed on the system to continuously observe operating system activities and security events.
-
-The Host Layer collects various types of endpoint data, including system logs, authentication events, user activities, running processes, and file integrity events. File Integrity Monitoring (FIM) continuously checks important system files and generates alerts whenever unauthorized modifications are detected.
-
-The collected logs are securely transmitted to the Wazuh Manager, where they are decoded, analyzed, and correlated with predefined security rules. This allows the SIEM platform to detect suspicious endpoint behavior and generate security alerts in real time.
-
-### Monitored Activities
-
-- System Logs
-- Authentication Logs
-- User Login Events
-- File Integrity Monitoring (FIM)
-- Process Monitoring
-- User Activity
-- Operating System Events
+The detailed agent configuration and registration process is explained in **Agent-Configuration.md**.
 
 ---
 
-# Network Layer Configuration
+# Network Configuration
 
-The Network Layer was deployed on a separate virtual machine responsible for monitoring network activities. A Wazuh Agent was installed to collect security events generated from the network monitoring environment.
+All virtual machines and monitored systems must be connected through the same network so they can communicate with the centralized Wazuh Server.
 
-This layer continuously monitors network-related events and forwards collected logs to the centralized Wazuh Manager. The Network Layer enables the detection of suspicious network activities such as abnormal connections, unauthorized communication attempts, and other security-related events.
+Before proceeding, verify that:
 
-In practical deployments, this layer can also integrate with network intrusion detection systems such as Suricata, allowing IDS alerts to be forwarded directly into the Wazuh SIEM platform for centralized analysis.
+- The Wazuh Server is reachable from all monitored endpoints.
+- Host Layer can communicate with the Wazuh Server.
+- Network Layer can communicate with the Wazuh Server.
+- Cloud Layer can communicate with the Wazuh Server.
+- The AI Engine can communicate with the Wazuh Server.
 
-### Monitored Activities
-
-- Network Events
-- Connection Logs
-- Traffic Monitoring
-- Security Events
-- IDS Alerts
-- Network Activity Logs
+Proper network connectivity is required for successful log collection and centralized monitoring.
 
 ---
 
-# Cloud Layer Configuration
+# Installation Workflow
 
-The Cloud Layer was implemented using an OpenStack virtual machine to simulate a cloud computing environment. A Wazuh Agent was installed inside the virtual machine to continuously monitor cloud infrastructure and operating system activities.
+The installation process follows these steps:
 
-The Cloud Layer collects authentication logs, virtual machine events, system logs, and cloud service activities. These logs are securely transmitted to the centralized Wazuh Manager where they are analyzed together with logs received from the Host and Network layers.
-
-This centralized monitoring approach provides complete visibility across hybrid environments consisting of physical systems, virtual machines, and cloud infrastructure.
-
-### Monitored Activities
-
-- Virtual Machine Events
-- Cloud Authentication Logs
-- System Logs
-- Cloud Service Logs
-- User Activities
-- Security Events
-
----
-
-# Communication with the Wazuh Manager
-
-All deployed Wazuh Agents establish secure communication with the centralized Wazuh Manager hosted on the Ubuntu VMware virtual machine.
-
-Once communication is established, every monitored endpoint periodically sends collected security events to the manager. The Wazuh Manager receives these events, decodes the incoming logs, normalizes the data, and applies built-in as well as custom security rules to identify suspicious activities.
-
-After processing, the analyzed logs are forwarded to the Wazuh Indexer for storage while generated alerts become available through the Wazuh Dashboard.
-
-This centralized communication architecture enables security analysts to monitor multiple environments from a single dashboard without directly accessing individual systems.
+1. Install VMware Workstation.
+2. Create the required virtual machines.
+3. Install Ubuntu 22.04 LTS for the Wazuh Server.
+4. Install Ubuntu/Kali Linux virtual machines for the Host and Network layers.
+5. Deploy the OpenStack virtual machine for the Cloud Layer.
+6. Update all operating systems.
+7. Install Git.
+8. Install Python and the required machine learning libraries.
+9. Install the Wazuh Agent on the Host, Network, and Cloud endpoints.
+10. Verify network communication between all systems.
+11. Continue with the Wazuh Server deployment.
 
 ---
 
-# AI Engine Integration
+# Next Step
 
-Unlike the monitored systems, the AI Engine was deployed on a Windows host machine instead of a virtual machine.
-
-The AI Engine acts as an intelligent analysis layer that extends the capabilities of the traditional SIEM platform.
-
-Raw logs collected by the Wazuh Manager are provided to the AI Engine for additional processing. Before analysis, the logs undergo preprocessing steps including data cleaning, feature extraction, normalization, and transformation into machine learning features.
-
-The project uses trained machine learning models to analyze logs collected from different security layers:
-
-- Isolation Forest for Host Layer anomaly detection
-- Random Forest for Network Layer intrusion detection
-- Random Forest for Cloud Layer anomaly detection
-
-Once prediction is completed, the AI Engine determines whether an event represents normal behavior or a potential security threat. If suspicious activity is detected, an AI-generated alert is created and automatically forwarded back to the Wazuh Manager.
-
-These AI-generated alerts are stored together with traditional rule-based alerts and become immediately visible through the Wazuh Dashboard, providing security analysts with enhanced threat detection capabilities.
-
----
-
-# Deployment Summary
-
-The final deployment demonstrates a centralized SIEM architecture capable of monitoring multiple environments simultaneously. Wazuh Agents deployed across the Host, Network, and Cloud layers continuously collect security logs and securely forward them to the Wazuh Manager. The manager performs rule-based analysis while simultaneously supplying raw logs to the AI Engine for machine learning-based anomaly detection.
-
-The AI Engine enhances traditional SIEM capabilities by identifying suspicious behaviors that may not match predefined detection rules. Finally, both rule-based and AI-generated alerts are stored in the Wazuh Indexer and visualized through the Wazuh Dashboard, providing a unified platform for real-time security monitoring, incident investigation, and intelligent threat detection.
+After completing the installation of the required software and Wazuh Agents, proceed to **Wazuh-Deployment.md**, which explains how to deploy the Wazuh Manager, Wazuh Indexer, and Wazuh Dashboard using the official Wazuh Quickstart installation script.
