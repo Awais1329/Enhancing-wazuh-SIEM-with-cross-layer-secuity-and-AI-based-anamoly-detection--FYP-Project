@@ -13,8 +13,7 @@ The documentation explains the complete deployment process, system configuration
 | Agent-Configuration.md | Installation and configuration of Wazuh Agents for the Host, Network, and Cloud layers. |
 | AI-Engine.md | AI pipeline, preprocessing, machine learning models, and alert generation. |
 | Dashboard.md | Overview of the Wazuh Dashboard and security monitoring features. |
-| Attack-Simulation.md | Attack scenarios used to evaluate the system and generate security events. |
-| Troubleshooting.md | Common installation, configuration, and deployment issues with their solutions. |
+
 
 ## Purpose
 
