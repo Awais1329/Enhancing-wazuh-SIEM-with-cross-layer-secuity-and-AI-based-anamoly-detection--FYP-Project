@@ -62,7 +62,7 @@ The proposed architecture consists of:
 
 The complete architecture and workflow are available in:
 
-📁 **Architecture/README.md**
+📄 **[Architecture Documentation](Architecture/README.md)**
 
 ---
 
@@ -174,9 +174,11 @@ The AI Engine analyzes security logs, detects anomalous behavior, and generates 
 
 Detailed installation instructions are available in:
 
-- 📄 docs/installation.md
-- 📄 docs/wazuh-deployment.md
-- 📄 docs/Agent-configuration.md
+- 📄 [Installation Guide](docs/installation.md)
+- 📄 [Wazuh Deployment](docs/wazuh-deployment.md)
+- 📄 [Agent Configuration](docs/Agent-configuration.md)
+- 📄 [AI Engine](docs/AI-engine.md)
+- 📄 [Dashboard](docs/dashboard.md)
 
 The project uses the official Wazuh Quick Start installation.
 
@@ -219,7 +221,7 @@ The AI models were trained using publicly available cybersecurity datasets.
 
 More information:
 
-📁 **datasets/README.md**
+📄 **[Dataset Documentation](datasets/README.md)**
 
 ---
 
@@ -249,7 +251,7 @@ Project screenshots demonstrating:
 
 are available inside:
 
-📁 **Screenshots/README.md**
+📄 **[Dashboard Screenshots](Screenshots/README.md)**
 
 ---
 
@@ -270,7 +272,7 @@ The video demonstrates:
 
 More information:
 
-📁 **VIDEO/README.md**
+📄 **[Project Demonstration](VIDEO/README.md)**
 
 ---
 
@@ -341,13 +343,6 @@ National University of Technology (NUTECH)
 
 ---
 
-# License
-
-This project is licensed under the MIT License.
-
-See the **LICENSE** file for more details.
-
----
 
 # Acknowledgements
 
